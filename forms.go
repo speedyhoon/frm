@@ -1,15 +1,11 @@
 package forms
 
-import (
-	"time"
-	"regexp"
-)
+import "regexp"
 
 type Form struct {
 	Action uint8
 	Fields []Field
 	Error  error
-	Expiry time.Time
 }
 
 type Field struct {
@@ -29,11 +25,4 @@ type Field struct {
 type Option struct {
 	Label, Value string
 	Selected     bool
-}
-
-func Fetch(getForm func(uint8)Form, formIDs ...uint8) (f []Form) {
-	for _, id := range formIDs {
-		f = append(f, getForm(id))
-	}
-	return f
 }
