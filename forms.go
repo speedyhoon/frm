@@ -5,7 +5,7 @@ import "regexp"
 type Form struct {
 	Action uint8
 	Fields []Field
-	Error  string
+	Error  error
 }
 
 type Field struct {
