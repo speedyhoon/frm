@@ -1,6 +1,9 @@
 package forms
 
-import "regexp"
+import (
+	"regexp"
+	"time"
+)
 
 type Form struct {
 	Action uint8
@@ -51,4 +54,8 @@ func (f *Field)UintSlice()[]uint{
 
 func (f *Field)Checked()bool{
 	return f.Value.(bool)
+}
+
+func (f *Field)Time()time.Time{
+	return f.Value.(time.Time)
 }
