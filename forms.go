@@ -9,7 +9,7 @@ import (
 type Form struct {
 	Action uint8
 	Fields []Field
-	Error  error
+	Err    error
 }
 
 //Field represents attributes for each HTML form field.
