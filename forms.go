@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-//Form represents details within a HTML form.
+//Form represents details about a HTML form.
 type Form struct {
 	Action uint8
 	Fields []Field
@@ -39,8 +39,8 @@ func (f *Field) Str() (o string) {
 	return f.Value.(string)
 }
 
-//StrSlice returns f.Value as a string slice.
-func (f *Field) StrSlice() (o []string) {
+//Strs returns f.Value as a string slice.
+func (f *Field) Strs() (o []string) {
 	if f == nil || f.Value == nil {
 		return
 	}
@@ -71,8 +71,8 @@ func (f *Field) Uint() (o uint) {
 	return f.Value.(uint)
 }
 
-//UintSlice returns f.Value as an unsigned integer slice.
-func (f *Field) UintSlice() (o []uint) {
+//Uints returns f.Value as an unsigned integer slice.
+func (f *Field) Uints() (o []uint) {
 	if f == nil || f.Value == nil {
 		return
 	}
