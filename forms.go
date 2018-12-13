@@ -36,7 +36,9 @@ func (f *Field) Str() (o string) {
 	if f == nil || f.Value == nil {
 		return
 	}
-	return f.Value.(string)
+
+	o, _ = f.Value.(string)
+	return
 }
 
 //Strs returns f.Value as a string slice.
@@ -44,7 +46,9 @@ func (f *Field) Strs() (o []string) {
 	if f == nil || f.Value == nil {
 		return
 	}
-	return f.Value.([]string)
+
+	o, _ = f.Value.([]string)
+	return
 }
 
 //Float returns f.Value as a float32.
@@ -52,7 +56,9 @@ func (f *Field) Float() (o float32) {
 	if f == nil || f.Value == nil {
 		return
 	}
-	return f.Value.(float32)
+
+	o, _ = f.Value.(float32)
+	return
 }
 
 //Float64 returns f.Value as a float64.
@@ -60,7 +66,9 @@ func (f *Field) Float64() (o float64) {
 	if f == nil || f.Value == nil {
 		return
 	}
-	return f.Value.(float64)
+
+	o, _ = f.Value.(float64)
+	return
 }
 
 //Uint returns f.Value as an unsigned integer.
@@ -68,7 +76,9 @@ func (f *Field) Uint() (o uint) {
 	if f == nil || f.Value == nil {
 		return
 	}
-	return f.Value.(uint)
+
+	o, _ = f.Value.(uint)
+	return
 }
 
 //Uints returns f.Value as an unsigned integer slice.
@@ -76,7 +86,9 @@ func (f *Field) Uints() (o []uint) {
 	if f == nil || f.Value == nil {
 		return
 	}
-	return f.Value.([]uint)
+
+	o, _ = f.Value.([]uint)
+	return
 }
 
 //Checked returns f.Value as a boolean.
@@ -84,7 +96,9 @@ func (f *Field) Checked() (o bool) {
 	if f == nil || f.Value == nil {
 		return
 	}
-	return f.Value.(bool)
+
+	o, _ = f.Value.(bool)
+	return
 }
 
 //Time returns f.Value as a datetime.
@@ -92,5 +106,7 @@ func (f *Field) Time() (o time.Time) {
 	if f == nil || f.Value == nil {
 		return
 	}
-	return f.Value.(time.Time)
+
+	o, _ = f.Value.(time.Time)
+	return
 }
