@@ -31,6 +31,16 @@ type Option struct {
 	Selected     bool
 }
 
+//Bytes returns f.Value as a byte slice.
+func (f *Field) Bytes() (o []byte) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.([]byte)
+	return
+}
+
 //Str returns f.Value as a string.
 func (f *Field) Str() (o string) {
 	if f == nil || f.Value == nil {
