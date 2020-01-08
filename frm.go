@@ -16,7 +16,8 @@ type Form struct {
 type Field struct {
 	Name, Err, Placeholder   string
 	Options                  []Option
-	Max, Min, MaxLen, MinLen int
+	Max, Min                 interface{}
+	MaxLen, MinLen           int
 	Step                     float32
 	Regex                    *regexp.Regexp
 	V8                       func(*Field, ...string)
