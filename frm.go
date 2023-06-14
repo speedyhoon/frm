@@ -5,14 +5,14 @@ import (
 	"time"
 )
 
-//Form represents details about a HTML form.
+// Form represents details about a HTML form.
 type Form struct {
 	Action uint8
 	Fields []Field
 	Err    error
 }
 
-//Field represents attributes for each HTML form field.
+// Field represents attributes for each HTML form field.
 type Field struct {
 	Name, Err, Placeholder   string
 	Options                  []Option
@@ -26,13 +26,13 @@ type Field struct {
 	//Size                     uint8
 }
 
-//Option represents attributes for an option within a select box, list box or data list.
+// Option represents attributes for an option within a select box, list box or data list.
 type Option struct {
 	Label, Value string
 	Selected     bool
 }
 
-//Bytes returns f.Value as a byte slice.
+// Bytes returns f.Value as a byte slice.
 func (f *Field) Bytes() (o []byte) {
 	if f == nil || f.Value == nil {
 		return
@@ -42,7 +42,7 @@ func (f *Field) Bytes() (o []byte) {
 	return
 }
 
-//Str returns f.Value as a string.
+// Str returns f.Value as a string.
 func (f *Field) Str() (o string) {
 	if f == nil || f.Value == nil {
 		return
@@ -52,7 +52,7 @@ func (f *Field) Str() (o string) {
 	return
 }
 
-//Strs returns f.Value as a string slice.
+// Strs returns f.Value as a string slice.
 func (f *Field) Strs() (o []string) {
 	if f == nil || f.Value == nil {
 		return
@@ -62,7 +62,7 @@ func (f *Field) Strs() (o []string) {
 	return
 }
 
-//Float returns f.Value as a float32.
+// Float returns f.Value as a float32.
 func (f *Field) Float() (o float32) {
 	if f == nil || f.Value == nil {
 		return
@@ -72,7 +72,7 @@ func (f *Field) Float() (o float32) {
 	return
 }
 
-//Float64 returns f.Value as a float64.
+// Float64 returns f.Value as a float64.
 func (f *Field) Float64() (o float64) {
 	if f == nil || f.Value == nil {
 		return
@@ -82,7 +82,7 @@ func (f *Field) Float64() (o float64) {
 	return
 }
 
-//Uint returns f.Value as an unsigned integer.
+// Uint returns f.Value as an unsigned integer.
 func (f *Field) Uint() (o uint) {
 	if f == nil || f.Value == nil {
 		return
@@ -92,7 +92,27 @@ func (f *Field) Uint() (o uint) {
 	return
 }
 
-//Uints returns f.Value as an unsigned integer slice.
+// Uint64 returns f.Value as an unsigned integer.
+func (f *Field) Uint64() (o uint64) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.(uint64)
+	return
+}
+
+// Uint32 returns f.Value as an unsigned integer.
+func (f *Field) Uint32() (o uint32) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.(uint32)
+	return
+}
+
+// Uints returns f.Value as an unsigned integer slice.
 func (f *Field) Uints() (o []uint) {
 	if f == nil || f.Value == nil {
 		return
@@ -102,7 +122,27 @@ func (f *Field) Uints() (o []uint) {
 	return
 }
 
-//Checked returns f.Value as a boolean.
+// Uint64s returns f.Value as an unsigned integer slice.
+func (f *Field) Uint64s() (o []uint64) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.([]uint64)
+	return
+}
+
+// Uint32s returns f.Value as an unsigned integer slice.
+func (f *Field) Uint32s() (o []uint32) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.([]uint32)
+	return
+}
+
+// Checked returns f.Value as a boolean.
 func (f *Field) Checked() (o bool) {
 	if f == nil || f.Value == nil {
 		return
@@ -112,7 +152,7 @@ func (f *Field) Checked() (o bool) {
 	return
 }
 
-//Time returns f.Value as a datetime.
+// Time returns f.Value as a datetime.
 func (f *Field) Time() (o time.Time) {
 	if f == nil || f.Value == nil {
 		return
