@@ -112,6 +112,26 @@ func (f *Field) Uint32() (o uint32) {
 	return
 }
 
+// Uint16 returns f.Value as an unsigned integer.
+func (f *Field) Uint16() (o uint16) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.(uint16)
+	return
+}
+
+// Uint8 returns f.Value as an unsigned integer.
+func (f *Field) Uint8() (o uint8) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.(uint8)
+	return
+}
+
 // Uints returns f.Value as an unsigned integer slice.
 func (f *Field) Uints() (o []uint) {
 	if f == nil || f.Value == nil {
@@ -139,6 +159,26 @@ func (f *Field) Uint32s() (o []uint32) {
 	}
 
 	o, _ = f.Value.([]uint32)
+	return
+}
+
+// Uint16s returns f.Value as an unsigned integer slice.
+func (f *Field) Uint16s() (o []uint16) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.([]uint16)
+	return
+}
+
+// Uint8s returns f.Value as an unsigned integer slice.
+func (f *Field) Uint8s() (o []uint8) {
+	if f == nil || f.Value == nil {
+		return
+	}
+
+	o, _ = f.Value.([]uint8)
 	return
 }
 
