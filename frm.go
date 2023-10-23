@@ -62,8 +62,8 @@ func (f *Field) Strs() (o []string) {
 	return
 }
 
-// Float returns f.Value as a float32.
-func (f *Field) Float() (o float32) {
+// Float32 returns f.Value as a float32.
+func (f *Field) Float32() (o float32) {
 	if f == nil || f.Value == nil {
 		return
 	}
