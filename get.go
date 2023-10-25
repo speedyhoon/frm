@@ -3,14 +3,14 @@ package frm
 var GetFields func(uint8) []Field
 
 // GetForms retrieves forms by their ids.
-func GetForms(formIDs ...uint8) (f map[uint8]Form) {
-	if len(formIDs) == 0 {
-		return nil
+//
+// The duplicate ids parameter is to ensure at least one uint8 is passed to the function without adding additional checks (same as the built-in exec.Command()).
+func GetForms(id uint8, ids ...uint8) (f map[uint8]Form) {
+	f = map[uint8]Form{
+		id: {Action: id, Fields: GetFields(id)},
 	}
-
-	f = make(map[uint8]Form, len(formIDs))
-	for _, formId := range formIDs {
-		f[formId] = Form{Action: formId, Fields: GetFields(formId)}
+	for _, id = range ids { // Reuse the existing `id` variable.
+		f[id] = Form{Action: id, Fields: GetFields(id)}
 	}
 
 	return
