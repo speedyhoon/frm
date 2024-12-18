@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// Form represents details about a HTML form.
+// Form represents details about an HTML form.
 type Form struct {
 	Action uint8
 	Fields []Field
