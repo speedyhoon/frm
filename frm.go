@@ -20,7 +20,7 @@ type Field struct {
 	MaxLen, MinLen           int
 	Step                     float32
 	Regex                    *regexp.Regexp
-	V8                       func(*Field, ...string)
+	Vl                       func(*Field, ...string) // Function to execute validation rules.
 	Value                    interface{}
 	Required, Disable, Focus bool
 	//Size                     uint8

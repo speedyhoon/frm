@@ -17,9 +17,9 @@ package frm
 //		frm.GetFields = func(id uint8) []frm.Field {
 //			switch id {
 //			case frmNew:
-//				return []frm.Field{{Name: "new", V8: vl.StrReq}}
+//				return []frm.Field{{Name: "new", Vl: vl.StrReq}}
 //			case frmSave:
-//				return []frm.Field{{Name: "id", V8: vl.Regex}, {Name: "save", V8: vl.StrReq}}
+//				return []frm.Field{{Name: "id", Vl: vl.Regex}, {Name: "save", Vl: vl.StrReq}}
 //			}
 //			return nil
 //		}
