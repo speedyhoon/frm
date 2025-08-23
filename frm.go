@@ -5,14 +5,14 @@ import (
 	"time"
 )
 
-// Form represents details about an HTML form.
+// Form stores details about an HTML form.
 type Form struct {
 	Action uint8
 	Fields []Field
 	Err    error
 }
 
-// Field represents attributes for each HTML form field.
+// Field stores attributes for each HTML form field.
 type Field struct {
 	Name, Err, Placeholder   string
 	Options                  []Option
