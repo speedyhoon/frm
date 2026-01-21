@@ -16,12 +16,12 @@ type Form struct {
 type Field struct {
 	Name, Err, Placeholder   string
 	Options                  []Option
-	Max, Min                 interface{}
+	Max, Min                 any
 	MaxLen, MinLen           int
 	Step                     float32
 	Regex                    *regexp.Regexp
 	Vl                       func(*Field, ...string) // Function to execute validation rules.
-	Value                    interface{}
+	Value                    any
 	Required, Disable, Focus bool
 	//Size                     uint8
 }
